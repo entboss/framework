@@ -28,23 +28,6 @@ class Model extends EloquentModel
     //是否多站点
     protected static $mulit = true;
 
-    public function __construct(){
-        // 连接数据库
-        $db_cfg = require CONFIG_PATH.'/database.php';
-        if(isset($db_cfg['default']) && isset($db_cfg['connections'])){
-            $conn = $db_cfg['default'];
-            if(isset($db_cfg['connections'][$conn]) && $db_cfg['connections'][$conn] != ''){
-                $db_conn = $db_cfg['connections'][$conn];
-                $db = new DB;
-                $db->addConnection($db_conn);
-                $db->setAsGlobal();
-                $db->bootEloquent();
-            }else{
-                throw new Exception("config/database.php error");
-            }
-        }
-    }
-
     /** 
      * 根据主键id获取数据对象 
      * 

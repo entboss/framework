@@ -1,12 +1,11 @@
 <?php
-use Eb\Core\Route;
 
-Route::get ('/',     'Eb\Controller\WebController@index');
+$app['router']->get ('/',     'Eb\Controller\WebController@index');
 
-Route::get('/fuck', function() {
-    echo "成功！";
+$app['router']->get ('/www', function() {
+    return "成功！";
 });
 
-Route::post('/', function() {
-    echo 'POST request!';
+$app['router']->post('/', function() {
+    return 'POST request!';
 });
