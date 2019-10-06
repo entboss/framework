@@ -1,0 +1,20 @@
+# Framewrok
+/node_modules
+/vendor
+/storage/*.key
+/public/upload
+/public/storage
+.env
+
+# Homestead
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini

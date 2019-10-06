@@ -1,0 +1,18 @@
+{
+    "name": "entboss/framework",
+	"type": "project",
+    "description": "The EntBoss Framework.",
+    "license": "MIT",
+	"require": {
+        "php": "^7.2",
+        "illuminate/database": "^6.1",
+        "filp/whoops": "^2.5",
+        "predis/predis": "^1.1",
+        "twig/twig": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eb\\": "eb/"
+        }
+    }
+}
