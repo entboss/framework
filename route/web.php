@@ -1,11 +1,11 @@
 <?php
 
-$app['router']->get ('/',     'Eb\Controller\WebController@index');
+$app['router']->get('/', 'Eb\Controller\WebController@index');
 
-$app['router']->get ('/www', function() {
-    return "成功！";
+$app['router']->get('/www', function () {
+    return '成功！';
 });
 
-$app['router']->post('/', function() {
+$app['router']->post('/', function () {
     return 'POST request!';
 });

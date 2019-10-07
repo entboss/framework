@@ -1,26 +1,26 @@
 <?php
 
 return [
-    'default' => 'mysql',
+    'default'     => 'mysql',
     'connections' => [
         'mysql' => [
-            'driver' => 'mysql',
-            'host' => '127.0.0.1',
-            'port' => '3306',
-            'database' => 'user',
-            'username' => 'user',
-            'password' => 'Hexin123.',
-            'charset' => 'utf8mb4',
+            'driver'    => 'mysql',
+            'host'      => '127.0.0.1',
+            'port'      => '3306',
+            'database'  => 'user',
+            'username'  => 'user',
+            'password'  => 'Hexin123.',
+            'charset'   => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
+            'prefix'    => '',
         ],
     ],
     'redis' => [
         'default' => [
-            'url' => '',
-            'host' => '127.0.0.1',
+            'url'      => '',
+            'host'     => '127.0.0.1',
             'password' => null,
-            'port' => 6379,
+            'port'     => 6379,
             'database' => 0,
         ],
     ],
