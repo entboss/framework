@@ -1,8 +1,21 @@
 {
     "name": "entboss/framework",
-	"type": "project",
     "description": "The EntBoss Framework.",
+    "authors": [
+        {    
+          "name": "entboss",    
+          "email": "entboss@hotmail.com"
+        }
+    ],
     "license": "MIT",
+    "type": "project",
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+	"minimum-stability": "dev",
+    "prefer-stable": true,
 	"require": {
         "php": "^7.2",
         "illuminate/routing": "^6.1",
@@ -10,15 +23,16 @@
         "illuminate/database": "^6.1",
         "illuminate/view": "^6.1",
         "predis/predis": "^1.1",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "entboss/support": "^19.10"
+    },
+    "require-dev": {
+        "filp/whoops": "^2.5",
+        "phpunit/phpunit": "^8.4"
     },
     "autoload": {
         "psr-4": {
             "Eb\\": "eb/"
         }
-    },
-    "require-dev": {
-        "filp/whoops": "^2.5",
-        "phpunit/phpunit": "^8.4"
     }
 }

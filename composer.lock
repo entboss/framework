@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c3e6c98c7684fdd90459cab7bf852e7",
+    "content-hash": "262e713900190af5297a175882a23a72",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -78,6 +78,43 @@
                 "string"
             ],
             "time": "2018-01-09T20:05:19+00:00"
+        },
+        {
+            "name": "entboss/support",
+            "version": "19.10.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/entboss/support.git",
+                "reference": "248d286f054730b6d13221a3a4ea95ef0873fd87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/entboss/support/zipball/248d286f054730b6d13221a3a4ea95ef0873fd87",
+                "reference": "248d286f054730b6d13221a3a4ea95ef0873fd87",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "illuminate/support": "^6.1",
+                "php": "^7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eb\\Support\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The EntBoss Support.",
+            "time": "2019-10-07T03:26:09+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4028,9 +4065,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.2"
