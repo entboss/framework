@@ -2,19 +2,16 @@
 
 namespace Eb\Controller;
 
-use Eb\Core\Controller;
-use Eb\Model\User;
-use Illuminate\Container\Container;
+use Eb\Service\UserService;
+use Eb\Support\Str;
 
 class WebController extends Controller
 {
-    public function index()
-    {
-        $user = User::first()->toArray();
-        //var_dump($user);
-        $app = Container::getInstance();
-        $factory = $app->make('view');
-
-        return $factory->make('index')->with('item', $user);
+    public function index() {
+        $userSrv = new UserService;
+        $user = $userSrv->getUser(1);
+        //$uuid = Str::uuid();
+        var_dump($user);
+        return $this->view('index', $user);
     }
 }

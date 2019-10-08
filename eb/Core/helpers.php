@@ -13,78 +13,6 @@ use Illuminate\Support\Collection;
 use Jenssegers\Agent\Agent;
 use Maatwebsite\Excel\Facades\Excel;
 
-if (!function_exists('get_uid')) {
-    /**
-     * 生成 uniqid Key.
-     *
-     * @return string the unique identifier
-     */
-    function get_uid()
-    {
-        return md5(uniqid(rand(), true));
-    }
-}
-
-if (!function_exists('get_pad_id')) {
-    /**
-     * 在数字编号前面补0，默认6位数
-     * 0 => 000000,1 => 000001,20 => 000020,432 => 000432.
-     *
-     * @param int $num
-     * @param int $n
-     *
-     * @return string
-     */
-    function get_pad_id($num, $n = 6)
-    {
-        return str_pad((int) $num, $n, '0', STR_PAD_LEFT);
-    }
-}
-
-if (!function_exists('get_order_no')) {
-    /**
-     * 生成订单编码
-     * O 20190101 - 010101 100.
-     *
-     * @param string $prefix
-     *
-     * @return string
-     */
-    function get_order_no($prefix = 'O')
-    {
-        $order_main = $prefix.date('Ymd-His').rand(100, 999);
-    }
-}
-
-if (!function_exists('get_id_array')) {
-    /**
-     * 获取数组里面的id值，并以该值作为key生成新的数组.
-     *
-     * @param array 旧数组
-     *
-     * @return array 新数组
-     */
-    function get_id_array($arr)
-    {
-        $ret = [];
-        if (is_array($arr) && count($arr)) {
-            foreach ($arr as $item) {
-                if (isset($item['id'])) {
-                    $id = $item['id'];
-                    unset($item['id']);
-                    foreach ($item as &$repeat) {
-                        if (is_array($repeat)) {
-                            $repeat = get_id_array($repeat);
-                        }
-                    }
-                    $ret[$id] = $item;
-                }
-            }
-        }
-
-        return $ret;
-    }
-}
 
 if (!function_exists('is_mobile')) {
     /**
@@ -248,70 +176,6 @@ if (!function_exists('get_ip')) {
         } else {
             return $ip;
         }
-    }
-}
-
-if (!function_exists('array_to_object')) {
-    /**
-     * 数组转化成对象
-     *
-     * @param array $array
-     *
-     * @return object
-     */
-    function array_to_object($array)
-    {
-        if ($array) {
-            return (object) $array;
-        } else {
-            return $array;
-        }
-    }
-}
-
-if (!function_exists('object_to_array')) {
-    /**
-     * 对象转化成数组.
-     *
-     * @param objcet $object
-     *
-     * @return array
-     */
-    function object_to_array($object)
-    {
-        $arr = [];
-        $_arr = is_object($object) ? get_object_vars($object) : $object;
-        if ($_arr) {
-            foreach ($_arr as $key => $value) {
-                $value = (is_array($value) || is_object($value)) ? object_to_array($value) : $value;
-                $arr[preg_replace('/^.+\0/', '', $key)] = $value;
-            }
-        }
-
-        return $arr;
-    }
-}
-
-if (!function_exists('array_group_by')) {
-    /**
-     * 对数组进行重新分组，如groupBy操作.
-     *
-     * @param array  $array
-     * @param string $field
-     *
-     * @return array
-     */
-    function array_group_by($array, $field)
-    {
-        $arr = [];
-        foreach ($array as $item) {
-            $name = $item[$field];
-            unset($item[$field]);
-            $arr[$name]['title'] = $name;
-            $arr[$name]['item'][] = $item;
-        }
-
-        return $arr;
     }
 }
 
@@ -973,27 +837,5 @@ if (!function_exists('valid_date')) {
         } else {
             return false;
         }
-    }
-}
-
-if (!function_exists('set_str_prefix')) {
-    /**
-     * 为字符串添加前缀-一维数组.
-     *
-     * @param array  $data 数据源
-     * @param string $file 导出文件名
-     *
-     * @return array
-     */
-    function set_str_prefix($data = [], $prefix = '')
-    {
-        if (empty($data) || empty($prefix)) {
-            return $data;
-        }
-        $data = array_map(function ($v) use ($prefix) {
-            return $prefix.$v;
-        }, $data);
-
-        return $data;
     }
 }

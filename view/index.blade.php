@@ -1,1 +1,1 @@
-Hello world. {{ $item['email'] }}
+Hello world. {{ $data['email'] }}

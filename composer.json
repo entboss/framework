@@ -18,13 +18,13 @@
     "prefer-stable": true,
 	"require": {
         "php": "^7.2",
-        "illuminate/routing": "^6.1",
-        "illuminate/events": "^6.1",
-        "illuminate/database": "^6.1",
-        "illuminate/view": "^6.1",
-        "predis/predis": "^1.1",
+        "entboss/support": "^19.10",
         "guzzlehttp/guzzle": "^6.3",
-        "entboss/support": "^19.10"
+        "illuminate/database": "^6.1",
+        "illuminate/events": "^6.1",
+        "illuminate/routing": "^6.1",
+        "illuminate/view": "^6.1",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "filp/whoops": "^2.5",

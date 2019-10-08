@@ -1,19 +1,17 @@
 <?php
 /**
- * 数据层基类.
+ * Model
  *
  * @copyright  Copyright (c) 2019 EntBoss (http://www.entboss.com)
  * @license    http://www.entboss.com/license
  * @author     EntBoss Team
  *
- * @version    3.1
+ * @version    19.10.8
  */
 
-namespace Eb\Core;
+namespace Eb\Model;
 
-use Illuminate\Database\Eloquent\Model as EloquentModel;
-
-class Model extends EloquentModel
+class Model extends \Illuminate\Database\Eloquent\Model
 {
     //不自动更新时间
     public $timestamps = false;
