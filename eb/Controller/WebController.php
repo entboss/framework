@@ -10,8 +10,8 @@ class WebController extends Controller
     public function index() {
         $userSrv = new UserService;
         $user = $userSrv->getUser(1);
-        //$uuid = Str::uuid();
-        var_dump($user);
+        $id = Str::random();
+        var_dump($user, $id);
         return $this->view('index', $user);
     }
 }

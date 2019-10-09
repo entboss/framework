@@ -18,7 +18,6 @@
     "prefer-stable": true,
 	"require": {
         "php": "^7.2",
-        "entboss/support": "^19.10",
         "guzzlehttp/guzzle": "^6.3",
         "illuminate/database": "^6.1",
         "illuminate/events": "^6.1",
